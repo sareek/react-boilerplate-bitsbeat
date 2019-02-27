@@ -10,6 +10,9 @@ import { makeSelectLocation } from 'containers/App/selectors';
 // import ComingSoonPage from 'containers/ComingSoonPage';
 // import Dashboard from '../containers/Dashboard/Admin';
 import Dashboard from '../containers/DashboardPage/';
+import RolesDashboard from '../containers/RolesContainer/';
+// import SuperAdminDashboard from '../containers/SuperAdminDashboard/';
+import CustomDashboard from '../containers/CustomDashboard/';
 
 const AdminRoutes = props => {
   const { location } = props;
@@ -27,6 +30,8 @@ const AdminRoutes = props => {
             <Route exact path="/admin/dashboard/blogs" component={ComingSoonPage} />
             <Route exact path="/admin/dashboard/blog-comment-review" component={ComingSoonPage} /> */}
       <Route exact path="/admin/dashboard" component={Dashboard} />
+      <Route exact path="/admin/dashboard/role" component={RolesDashboard} />
+      <Route exact path="/admin/dashboard/customdashboard" component={CustomDashboard} />
       <Redirect from="*" to="/admin/dashboard" />
     </Switch>
   );

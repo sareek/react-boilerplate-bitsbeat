@@ -85,21 +85,22 @@ function exampleContainerReducer(state = initialState, action = {type: ''}) {
      // const titleList = state.get('titleList').toJS();
       for(var i = 0; i < state.get('titleList').toJS().length; i++) {
         if(state.get('titleList').toJS()[i].key == action.relevantId) {
-          var temp = state.get('titleList').toJS()
+          temp = state.get('titleList').toJS()
           temp.splice(i, 1);
           state.get('titleList').toJS().splice(i,1)
           console.log('direct splice',state.get('titleList').toJS())
-         // state.get('titleList').toJS().splice(i,1).set('titleList', temp)
-          console.log('inside if block',state.get('titleList').toJS())
+         //state.get('titleList').toJS().splice(i,1).set('titleList', temp)
+          console.log('inside if block',temp)
           
           break;
         }
        // console.log('looping',temp)
       }
-      console.log('new list',state.get('titleList').toJS())
+      console.log('new list',temp)
       return state.merge({
-      
-      }).set()  
+        titleList:temp
+     
+      })
 
     default:
       return state;

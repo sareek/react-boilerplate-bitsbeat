@@ -24,6 +24,10 @@ import LoginPage from '../LoginPage/Loadable';
 import AdminDashboard from '../Dashboard/Admin';
 import ExamplePage from '../ExampleContainer/Loadable';
 import ImageUpload from '../ImageUpload/Loadable';
+import AuthContainer from '../AuthContainer/Loadable';
+//import Dashboard from '../Dashboard/Loadable';
+import SuperAdminDashboard from '../SuperAdminDashboard/Loadable';
+import SignUp from '../SignUp/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import GuestRoute from 'components/Routes/GuestRoute';
@@ -69,14 +73,24 @@ const App = props => {
       {dialog && dialog.size > 0 && dialog.toJS()}
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/auth" component={AuthContainer} />
         <Route path="/features" component={FeaturePage} />
         <Route path="/example" component={ExamplePage} />
         <Route path="/imageupload" component={ImageUpload} />
+        <Route exact path="/superadmin" component={SuperAdminDashboard} />
+        <Route path="/admin/dashboard" component={AdminDashboard} />
+        
         <GuestRoute
           exact
           location={location}
           path="/login"
           component={LoginPage}
+        />
+        <GuestRoute
+          exact
+          location={location}
+          path="/signup"
+          component={SignUp}
         />
         <UserRoute
           location={location}
@@ -85,7 +99,7 @@ const App = props => {
         />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </AppWrapper>
   );
 };

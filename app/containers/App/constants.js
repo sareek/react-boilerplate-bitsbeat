@@ -47,7 +47,7 @@ export const UPDATE_FIRST_LOAD_SUCCESS =
 export const API_BASE =
   process.env.NODE_ENV === 'production'
     ? 'https://www.techastep.com/api/'
-    : 'http://localhost:5000/api/';
+    : 'http://192.168.31.114:5000/api/';
 
 // For file upload
 export const DOCUMENT_URL =

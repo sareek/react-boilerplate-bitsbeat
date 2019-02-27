@@ -29,7 +29,7 @@ class TopNavigation extends React.Component {
             animation="overlay"
             direction="top"
             visible={visible}
-            inverted
+            inverted>
               <Menu.Item name='home'>
                             <Icon name='home' />
                             Home

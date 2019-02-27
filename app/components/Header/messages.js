@@ -22,4 +22,8 @@ export default defineMessages({
     id: 'boilerplate.components.Header.login',
     defaultMessage: 'Login',
   },
+  signup: {
+    id: 'boilerplate.components.Header.signup',
+    defaultMessage: 'Signup',
+  },
 });

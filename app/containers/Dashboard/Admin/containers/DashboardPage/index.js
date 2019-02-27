@@ -30,48 +30,9 @@ export class DashboardPage extends React.Component {
           <meta name="description" content="Description of DashboardPage" />
         </Helmet>
         <FormattedMessage {...messages.header} />
-        <h2>Welcome to Tech A Step - Future begins From Here :)</h2>
-        <Grid columns="equal" className="stackable ">
-          <Grid.Row>
-            <Grid.Column>
-              <Segment raised inverted color="green">
-                <Statistic>
-                  <Statistic.Label>Active Users</Statistic.Label>
-                  <Statistic.Value>123</Statistic.Value>
-                </Statistic>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment raised inverted color="teal">
-                <Statistic>
-                  <Statistic.Label>Categories</Statistic.Label>
-                  <Statistic.Value>5</Statistic.Value>
-                </Statistic>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment raised inverted color="blue">
-                <Statistic>
-                  <Statistic.Label>Views</Statistic.Label>
-                  <Statistic.Value>55</Statistic.Value>
-                </Statistic>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment raised inverted color="red">
-                <Statistic>
-                  <Statistic.Label>Articles</Statistic.Label>
-                  <Statistic.Value>100</Statistic.Value>
-                </Statistic>
-              </Segment>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Segment>Trending Article</Segment>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <p>Dashboard</p>
+        
+
       </div>
     );
   }

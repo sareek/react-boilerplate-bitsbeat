@@ -11,10 +11,30 @@ const SideNavigation = () => (
         <Icon name="home" /> Dashboard
       </Link>
     </Menu.Item>
-    {/* <Menu.Item name='users'>
+    <Menu.Item name="game">
+      <Link to="/admin/dashboard/superadmintest">
+        {' '}
+        <Icon name="game" /> SuperAdmin
+      </Link>
+
+    </Menu.Item>
+    <Menu.Item name="game">
+      <Link to="/admin/dashboard/customdashboard">
+        {' '}
+        <Icon name="game" /> CustomDashboard
+      </Link>
+
+    </Menu.Item>
+    <Menu.Item name="game">
+      <Link to="/admin/dashboard/role">
+        {' '}
+        <Icon name="game" /> Role
+      </Link>
+    </Menu.Item>
+    <Menu.Item name='users'>
       <Icon name='users' />
       <Link to='/admin/dashboard/blog-category'>Blog Category</Link>
-    </Menu.Item> */}
+    </Menu.Item>
   </Sidebar>
 );
 

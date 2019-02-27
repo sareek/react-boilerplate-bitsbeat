@@ -7,23 +7,27 @@ import * as types from './constants';
 import * as actions from './actions';
 
 function* redirectOnSuccess() {
+
   const action = yield take(types.LOGIN_SUCCESS);
-  const { response } = action;
-  const { token, userInfo } = response.data;
-  localStorage.setItem('token', token);
-  yield put(setUser(userInfo));
-  yield put(setToken(token));
+  console.log('redirect on success',action.response)
+  //const { response } = action;
+ // const { token, userInfo } = response.data;
+  localStorage.setItem('token', action.response.token);
+ // yield put(setUser(userInfo));
+ // yield put(setToken(token));
+
 }
 
 function* loginFlow(action) {
   const successWatcher = yield fork(redirectOnSuccess);
   const { data } = action;
+  console.log('lll',data)
   yield fork(
     bitsbeatProject.post(
-      'login',
+      'auth',
       actions.loginSuccess,
       actions.loginFailure,
-      data,
+      data
     ),
   );
   yield take([LOCATION_CHANGE, types.LOGIN_FAILURE]);

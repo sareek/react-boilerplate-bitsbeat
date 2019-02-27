@@ -51,16 +51,18 @@ class LoginPage extends React.PureComponent {
   validate = () => {
     const errors = {};
     const { data } = this.state;
-    if (!data.username) errors.username = "Can't be empty";
+    if (!data.email) errors.email = "Can't be empty";
     if (!data.password) errors.password = "Can't be empty";
     return errors;
   };
   handleSubmit = e => {
     e.preventDefault();
+    console.log('login handler', this.state.data.email,'  ', this.state.data.password)
     const errors = this.validate();
     this.setState({ errors });
     if (Object.keys(errors).length === 0) {
       this.props.login(this.state.data);
+      console.log('dispatching login', this.state.data)
     }
   };
   /* for other input fields */
@@ -96,16 +98,16 @@ class LoginPage extends React.PureComponent {
               <Segment stacked>
                 <Form.Field>
                   <Input
-                    name="username"
+                    name="email"
                     icon="user"
                     iconPosition="left"
-                    error={!!errors.username}
+                    error={!!errors.email}
                     placeholder="E-mail address"
                     onChange={this.handleChange}
-                    value={data.username || ''}
+                    value={data.email || ''}
                   />
-                  {errors.username && (
-                    <Message warning header={errors.username} />
+                  {errors.email && (
+                    <Message warning header={errors.email} />
                   )}
                 </Form.Field>
                 <Form.Field>
@@ -130,6 +132,7 @@ class LoginPage extends React.PureComponent {
                   type="submit"
                   loading={isRequesting}
                   disabled={isRequesting}
+                  
                 >
                   Login
                 </Button>

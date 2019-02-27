@@ -18,11 +18,14 @@ class AdminDashboard extends React.Component {
   render() {
     return (
       <Grid>
+        {/* <Grid.Row width={3}>
+          <p>test</p>
+        </Grid.Row> */}
         <Grid.Row>
           <Grid.Column>
-            <Button onClick={this.props.logout} className="right floated">
+            {/* <Button onClick={this.props.logout} className="right floated">
               Logout
-            </Button>
+            </Button> */}
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
